@@ -1,0 +1,19 @@
+{
+    "name": "tnlake/lib",
+    "description": "Utilities for Laravel 12 (config publish only, no routes).",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/tnlake/tnlake-lib",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0"
+    },
+    "autoload": { "psr-4": { "Tnlake\\Lib\\": "src/" } },
+    "extra": {
+        "laravel": {
+            "providers": ["Tnlake\\Lib\\LibServiceProvider"]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
