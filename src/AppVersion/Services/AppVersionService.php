@@ -1,6 +1,6 @@
 <?php
 
-namespace Tnlake\Lib\Version\Services;
+namespace Tnlake\Lib\AppVersion\Services;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
@@ -14,7 +14,7 @@ class AppVersionService
      */
     public function getIosLatestVersion(): ?array
     {
-        $cacheKey = Config::get("tnlib.version.cache_key");
+        $cacheKey = Config::get("tnlib.app_version.cache_key");
         return Cache::get($cacheKey);
     }
 
@@ -23,7 +23,7 @@ class AppVersionService
      */
     public function refreshVersions(): ?array
     {
-        $cacheKey = Config::get("tnlib.version.cache_key");
+        $cacheKey = Config::get("tnlib.app_version.cache_key");
 
         // 新しいバージョン情報を取得
         $versionInfo = $this->fetchIosVersionFromAppStore();
@@ -43,16 +43,8 @@ class AppVersionService
      */
     public function checkVersion(string $currentVersion, string $platform): array
     {
-        // 開発版は許可
-        if (version_compare($currentVersion, "1.0.0", "<")) {
-            return [
-                "status" => "ok",
-                "current" => $currentVersion
-            ];
-        }
-
         // 最小必須バージョンをconfigから取得
-        $minimumVersion = Config::get("tnlib.version.min_versions.{$platform}");
+        $minimumVersion = Config::get("tnlib.app_version.min_versions.{$platform}");
 
         if (!$minimumVersion) {
             return [
@@ -114,12 +106,12 @@ class AppVersionService
      */
     private function fetchIosVersionFromAppStore(): ?array
     {
-        $appId = Config::get("tnlib.version.ios_app_id");
+        $appId = Config::get("tnlib.app_version.ios_app_id");
 
         try {
-            $response = Http::timeout(5)->get(Config::get("tnlib.version.itunes_lookup_url"), [
+            $response = Http::timeout(5)->get(Config::get("tnlib.app_version.itunes_lookup_url"), [
                 "id" => $appId,
-                "country" => Config::get("tnlib.version.itunes_country")
+                "country" => Config::get("tnlib.app_version.itunes_country")
             ]);
 
             if ($response->successful()) {
@@ -174,13 +166,13 @@ class AppVersionService
     {
         switch ($platform) {
             case "ios":
-                $appId = Config::get("tnlib.version.ios_app_id");
-                $baseUrl = Config::get("tnlib.version.store_urls.ios");
+                $appId = Config::get("tnlib.app_version.ios_app_id");
+                $baseUrl = Config::get("tnlib.app_version.store_urls.ios");
                 return $baseUrl . $appId;
 
             case "android":
-                $packageId = Config::get("tnlib.version.android_package_id");
-                $baseUrl = Config::get("tnlib.version.store_urls.android");
+                $packageId = Config::get("tnlib.app_version.android_package_id");
+                $baseUrl = Config::get("tnlib.app_version.store_urls.android");
                 return $baseUrl . $packageId;
 
             default:

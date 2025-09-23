@@ -3,8 +3,8 @@
 namespace Tnlake\Lib;
 
 use Illuminate\Support\ServiceProvider;
-use Tnlake\Lib\Version\Services\AppVersionService;
-use Tnlake\Lib\Version\Commands\UpdateStoreVersionCache;
+use Tnlake\Lib\AppVersion\Services\AppVersionService;
+use Tnlake\Lib\AppVersion\Commands\UpdateStoreVersionCache;
 
 class LibServiceProvider extends ServiceProvider
 {

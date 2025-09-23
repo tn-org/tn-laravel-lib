@@ -8,6 +8,9 @@ build:
 bash:
 	docker compose run --rm php bash
 
+phpstan:
+    docker compose run --rm php vendor/bin/phpstan analyse
+
 # Composer
 composer-install:
 	docker compose run --rm php composer install --no-interaction --prefer-dist

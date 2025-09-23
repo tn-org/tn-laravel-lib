@@ -1,8 +1,8 @@
 <?php
 
-namespace Tnlake\Lib\Version\Commands;
+namespace Tnlake\Lib\AppVersion\Commands;
 
-use Tnlake\Lib\Version\Services\AppVersionService;
+use Tnlake\Lib\AppVersion\Services\AppVersionService;
 use Illuminate\Console\Command;
 
 class UpdateStoreVersionCache extends Command
