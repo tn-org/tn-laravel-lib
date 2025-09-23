@@ -1,9 +1,9 @@
 <?php
 
-namespace Tnlake\Lib\Api\Exceptions;
+namespace Tnlake\Api\Exceptions;
 
-use Tnlake\Lib\Api\Enums\ApiErrorCode;
-use Tnlake\Lib\Api\Enums\HttpStatus;
+use Tnlake\Api\Enums\ApiErrorCode;
+use Tnlake\Api\Enums\HttpStatus;
 use Exception;
 
 class ApiException extends Exception

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tnlake\Lib\Api\Enums;
+namespace Tnlake\Api\Enums;
 
 /**
  * 標準的なHTTPステータスコード

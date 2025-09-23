@@ -1,9 +1,9 @@
 <?php
 
-namespace Tnlake\Lib\AppVersion\Middleware;
+namespace Tnlake\AppVersion\Middleware;
 
-use Tnlake\Lib\Api\Responses\ApiResponse;
-use Tnlake\Lib\AppVersion\Services\AppVersionService;
+use Tnlake\Api\Responses\ApiResponse;
+use Tnlake\AppVersion\Services\AppVersionService;
 use Closure;
 use Illuminate\Http\Request;
 

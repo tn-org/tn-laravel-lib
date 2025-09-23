@@ -9,7 +9,7 @@ bash:
 	docker compose run --rm php bash
 
 phpstan:
-    docker compose run --rm php vendor/bin/phpstan analyse
+	docker compose run --rm php vendor/bin/phpstan analyse
 
 # Composer
 composer-install:

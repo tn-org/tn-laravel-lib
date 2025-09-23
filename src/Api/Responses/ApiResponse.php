@@ -1,9 +1,9 @@
 <?php
 
-namespace Tnlake\Lib\Api\Responses;
+namespace Tnlake\Api\Responses;
 
-use Tnlake\Lib\Api\Enums\ApiErrorCode;
-use Tnlake\Lib\Api\Enums\HttpStatus;
+use Tnlake\Api\Enums\ApiErrorCode;
+use Tnlake\Api\Enums\HttpStatus;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 

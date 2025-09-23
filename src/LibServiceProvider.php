@@ -1,10 +1,10 @@
 <?php
 
-namespace Tnlake\Lib;
+namespace Tnlake;
 
 use Illuminate\Support\ServiceProvider;
-use Tnlake\Lib\AppVersion\Services\AppVersionService;
-use Tnlake\Lib\AppVersion\Commands\UpdateStoreVersionCache;
+use Tnlake\AppVersion\Services\AppVersionService;
+use Tnlake\AppVersion\Commands\UpdateStoreVersionCache;
 
 class LibServiceProvider extends ServiceProvider
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tnlake\Lib\AppVersion\Services;
+namespace Tnlake\AppVersion\Services;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
