@@ -4,7 +4,7 @@ namespace Tnlake\Lib;
 
 use Illuminate\Support\ServiceProvider;
 use Tnlake\Lib\Version\Services\AppVersionService;
-use Tnlake\Lib\Version\Commands\UpdateAppVersionCache;
+use Tnlake\Lib\Version\Commands\UpdateStoreVersionCache;
 
 class LibServiceProvider extends ServiceProvider
 {
@@ -29,7 +29,7 @@ class LibServiceProvider extends ServiceProvider
 
         // コマンドを登録
         if ($this->app->runningInConsole()) {
-            $this->commands([UpdateAppVersionCache::class]);
+            $this->commands([UpdateStoreVersionCache::class]);
         }
     }
 }

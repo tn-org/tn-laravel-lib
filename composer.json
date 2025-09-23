@@ -1,6 +1,6 @@
 {
     "name": "tnlake/lib",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Utilities for Laravel 12 (config publish only, no routes).",
     "type": "library",
     "license": "MIT",
