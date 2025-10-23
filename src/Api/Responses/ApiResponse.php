@@ -82,21 +82,17 @@ class ApiResponse
             $items = array_map($transformer, $items);
         }
 
-        return response()->json(
-            [
-                "success" => true,
-                "data" => $items,
-                "meta" => [
-                    "current_page" => $paginator->currentPage(),
-                    "last_page" => $paginator->lastPage(),
-                    "per_page" => $paginator->perPage(),
-                    "total" => $paginator->total(),
-                    "from" => $paginator->firstItem(),
-                    "to" => $paginator->lastItem()
-                ]
-            ],
-            HttpStatus::OK->value
-        );
+        return self::success([
+            "data" => $items,
+            "meta" => [
+                "current_page" => $paginator->currentPage(),
+                "last_page" => $paginator->lastPage(),
+                "per_page" => $paginator->perPage(),
+                "total" => $paginator->total(),
+                "from" => $paginator->firstItem(),
+                "to" => $paginator->lastItem()
+            ]
+        ]);
     }
 
     /**
